@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  become_user: client
+  become_method: sudo
+  tasks:
+    - name: 'Intall packages'
+      apt:
+        name: ['php7.3', 'apache2', 'libapache2-mod-php7.3']
+        state: latest
+      with_items:
+        - php7.3
+        - apache2
+        - libapache2-mod-php7.3

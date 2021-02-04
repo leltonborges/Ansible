@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks: 
+  - shell:
+      name: echo $PATH

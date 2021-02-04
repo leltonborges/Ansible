@@ -1,0 +1,5 @@
+---
+- name: 'Install php and apache2'
+  apt:
+    name: ['php7.3', 'apache2', 'libapache2-mod-php7.3', 'php7.3-gd', 'php-ssh2', 'python-mysqldb', 'php7.3-mysql', 'php-dev', 'libmcrypt-dev','php-pear']
+    state: latest

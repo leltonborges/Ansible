@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+     - name: Create a new database with name 'bobdata'
+       community.mysql.mysql_db:
+               name: bobdata
+               state: present
+
+     - name: Create new databases with names 'foo' and 'bar'
+       community.mysql.mysql_db:
+               name:
+                       - foo
+                       - bar
+               state: present

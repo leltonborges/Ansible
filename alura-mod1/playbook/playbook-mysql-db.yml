@@ -1,0 +1,11 @@
+---
+- name: 'Configuration mysql'
+  hosts: database
+  roles:
+    - mysql
+    
+- name: 'Configuration webserver'
+  hosts: wordpress 
+  roles:
+    # - webserver
+    - install_wordpress

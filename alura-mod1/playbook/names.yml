@@ -1,0 +1,4 @@
+---
+- hosts: all
+  tasks:
+          - shell: 'echo Ana > ~/alura/plabook_names.txt'

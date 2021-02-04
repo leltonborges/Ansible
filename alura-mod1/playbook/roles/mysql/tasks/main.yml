@@ -1,0 +1,33 @@
+---
+- name: 'install mariadb-server'
+  apt:
+    package:
+      - mariadb-server
+    state: present
+    update_cache: true
+
+- name: 'Create database'
+  mysql_db:
+    name: "{{ var_wp_name_db }}"
+    login_user: root
+    login_password: root
+    state: present
+
+- name: 'Create user from mysql database'
+  mysql_user:
+    login_user: root
+    login_password: root
+    name: "{{ var_wp_name_user }}"
+    password: "{{ var_wp_password_db }}"
+    priv: "{{ var_wp_name_db }}.*:ALL"
+    state: present
+    host: "{{ item }}"
+  with_items:
+    - "{{ var_wp_db_ip }}" #ip da maquina que precisa acessa este DB
+    
+- name: 'Copy file local mysql.cnf configurated for wordpress host access remote'
+  ansible.builtin.copy:
+    src: 'files/50-server.cnf'
+    dest: '/etc/mysql/mariadb.conf.d/50-server.cnf' 
+  notify:
+    - restart mysql

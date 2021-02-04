@@ -1,0 +1,17 @@
+- hosts: all
+  become: yes
+  become_user: client
+  tasks:
+  - name: 'Install PHP'
+    apt:
+       name: php7.3
+       state: latest
+  - name: 'Install Apache2'
+    apt:
+       name: apache2
+       state: latest
+  - name: 'Install modphp'
+    apt:
+       name: libapache2-mod-php7.3
+       state: latest
+ 
