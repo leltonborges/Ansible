@@ -1,0 +1,9 @@
+---
+- name: 'secret key'
+  shell: "cd /tmp/ansible/install_awx/installer && \
+      sed -i 's/awxsecret/808b705a400ef90932fa2b1fbbd1a7fc8cbe1dd5e6bd94a7463de59a5f63ddcc/' inventory"
+
+
+- name: 'admin pass'
+  shell: "cd /tmp/ansible/install_awx/installer && \
+      sed -i 's/# admin_password/admin_password/' inventory"

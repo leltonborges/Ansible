@@ -1,0 +1,5 @@
+---
+var_nodejs:
+  - nodejs
+  - npm
+  - git

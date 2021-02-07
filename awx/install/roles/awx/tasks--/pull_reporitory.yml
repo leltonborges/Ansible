@@ -1,0 +1,12 @@
+---
+# - name: "Clone awx repository, obs: Isto pode demorar um pouco"
+#   git:
+#     repo: https://github.com/ansible/awx.git
+#     dest: /tmp/ansible/install_awx/
+#     clone: yes
+
+- name: "Clone awx repository, obs: Isto pode demorar um pouco"
+  shell: "echo {{ var_git_repo }}"
+  # shell: "{{ login_user }} && \ 
+  #         cd /home/awx && \
+  #         {{ var_git_repo }}"

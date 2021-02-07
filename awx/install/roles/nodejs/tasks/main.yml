@@ -1,0 +1,29 @@
+---
+# - name: "Configuration setup_nodejs_14.X"
+#   ansible.builtin.shell: "curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh && \ 
+#                           bash nodesource_setup.sh"
+#   args:
+#     warn: no
+
+# - name: "Configuration source list node v14"
+#   ansible.builtin.template:
+#     src: templates/nodesource.list.j2
+#     dest: /etc/apt/sources.list.d/nodesource.list 
+
+- name: "Installing nodejs and NPM"
+  apt:
+    update_cache: yes
+    name: ['nodejs', 'npm']
+
+- name: "Installing Git"
+  apt:
+    update_cache: yes
+    name: git
+    
+
+- name: Install npm node.js package globally.
+  community.general.npm:
+    name: npm
+    global: yes
+    state: latest
+

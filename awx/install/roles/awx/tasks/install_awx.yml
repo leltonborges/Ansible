@@ -1,0 +1,5 @@
+---
+- name: "Install awx"
+  shell: "cd /tmp/ansible/install_awx/installer && \
+          ansible-playbook -i inventory install.yml"
+  

@@ -1,0 +1,6 @@
+---
+- name: 'Install postgresql-11'
+  apt:
+    update_cache: yes
+    name: postgresql-11
+    state: present

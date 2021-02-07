@@ -1,0 +1,25 @@
+---
+- name: "Inserting key docker"
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+  
+- name: "Inserting repository docker"
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
+    state: present
+
+- name: "Installing Docker CE"
+  apt:
+    update_cache: yes
+    name: "{{ var_dep_docker }}"
+
+- name: 'Install docker-compose 1.21'
+  pip:
+    name: docker-compose==1.21.0
+    # name: docker-compose==1.9.0
+    executable: pip3
+
+- name: 'Add awx in docker group'
+  shell: "usermod -aG docker {{ var_add_userG }}" 
+  become: yes

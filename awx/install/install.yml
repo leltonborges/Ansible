@@ -1,0 +1,10 @@
+---
+- name: "Full install awx"
+  hosts: awx
+  become: yes
+  roles:
+    # - docker
+    # - nodejs
+    # - ansible
+    # - config
+    - awx

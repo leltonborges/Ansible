@@ -1,0 +1,6 @@
+---
+var_dep_docker:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+var_add_userG: awx

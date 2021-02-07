@@ -1,0 +1,7 @@
+---
+- name: "fim"
+  shell: ls /etc
+# - import_tasks: pull_reporitory.yml
+# - import_tasks: generate_key_secret.yml
+# - import_tasks: install_awx.yml
+

@@ -1,0 +1,5 @@
+---
+var_git_repo: 'git clone -b 15.0.1 https://github.com/ansible/awx.git'
+var_install_dir: awx/installer
+login_user: su awx
+key_generate: 808b705a400ef90932fa2b1fbbd1a7fc8cbe1dd5e6bd94a7463de59a5f63ddcc

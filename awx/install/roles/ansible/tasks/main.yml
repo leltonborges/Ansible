@@ -1,0 +1,10 @@
+---
+- name: 'Install Ansible with pip3'
+  pip:
+    name: ansible
+    executable: pip3
+
+- name: 'Install requests 2.14.2'
+  pip:
+    name: requests==2.14.2
+    executable: pip3

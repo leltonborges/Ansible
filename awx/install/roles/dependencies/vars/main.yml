@@ -1,0 +1,16 @@
+---
+var_dependencies:
+  - python3 
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg-agent
+  - software-properties-common
+  - python3-pip
+  - pwgen
+  - python3-docker
+  - curl
+  - wget
+  - dirmngr
+  - ca-certificates 
+  - gnupg

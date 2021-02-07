@@ -1,0 +1,19 @@
+---
+- name: Create directory.
+  file:
+    path: /tmp/ansible/install_awx
+    state: directory
+    owner: awx
+    group: awx
+
+- name: "Clone awx repository, obs: Isto pode demorar um pouco"
+  git:
+    repo: https://github.com/ansible/awx.git
+    dest: /tmp/ansible/install_awx/
+    version: 15.0.1
+    clone: yes
+  become: false
+
+# - name: "Clone awx repository, obs: Isto pode demorar um pouco"
+#   shell: "git clone -b 15.0.1 https://github.com/ansible/awx.git"
+#   become: False

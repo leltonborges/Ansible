@@ -1,0 +1,5 @@
+---
+- name: "Add reporitory postgres in source.lis.d"
+  ansible.builtin.template:
+    src: 'templates/pgdg.list.j2'
+    dest: '/etc/apt/sources.list.d/pgdg.list'

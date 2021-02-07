@@ -1,0 +1,22 @@
+---
+- name: "Update"
+  apt:
+    update_cache: yes
+- name: "Removing apache2"
+  apt:
+    name: "apache2"
+    state: absent
+
+- name: "Installing dependencies"
+  apt:
+    name: "{{ var_dependencies }}"
+    state: present
+
+#Outra forma de fazer 'install dependencies'
+# - name: "Installing dependencies"
+#   apt:
+#     pkg: 
+#       - "{{ item }}"
+#   with_items:
+#     - "{{ var_dependencies }}"
+    

@@ -1,0 +1,4 @@
+---
+- import_tasks: repo_key.yml
+- import_tasks: config_source.yml
+- import_tasks: install_psql.yml

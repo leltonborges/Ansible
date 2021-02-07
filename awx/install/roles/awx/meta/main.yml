@@ -1,0 +1,6 @@
+dependencies:
+  - docker
+  - nodejs
+  - ansible
+  - config
+  - postgres
