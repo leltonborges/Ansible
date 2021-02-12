@@ -1,0 +1,10 @@
+[client]
+10.40.1.20
+
+
+[client:vars]
+ansible_user=client 
+#ansible_become=yes  
+ansible_become_method=sudo 
+ansible_become_pass='client'
+vault-password-file=../.mypass_vault

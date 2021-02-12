@@ -1,0 +1,11 @@
+---
+- name: 'Apt'
+  hosts: all
+  vars_files:
+    - ../pass.yml
+  tasks: 
+    - name: "apache2"
+      apt:
+        name: "apache2"
+        state: absent
+      become: yes
